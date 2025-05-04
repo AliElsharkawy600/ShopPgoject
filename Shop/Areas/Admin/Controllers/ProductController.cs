@@ -7,12 +7,14 @@ using Microsoft.IdentityModel.Tokens;
 using Shop.DataAccess.Repository.IRepository;
 using Shop.Models;
 using Shop.Models.ViewModels;
+using Shop.Utility;
 using System.Collections.Generic;
 using System.Drawing.Text;
 
 namespace Shop.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize(Roles = SD.Role_Admin)]
     public class ProductController : Controller
     {
         private readonly IUnitOfWork _unitOfWork;
